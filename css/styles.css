@@ -569,9 +569,9 @@ p:last-child {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: min(52vh, 460px);
+  height: min(68vh, 560px);
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 82%;
 }
 
 .creds {
