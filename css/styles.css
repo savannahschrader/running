@@ -391,13 +391,13 @@ p:last-child {
   align-items: start;
 }
 
-.coaching-photo {
-  position: sticky;
-  top: calc(var(--header-h) + 1.2rem);
+.coaching-layout {
+  display: grid;
+  gap: clamp(2.2rem, 4.5vw, 3.4rem);
 }
 
 .coaching-photo img {
-  height: min(78vh, 640px);
+  height: min(58vh, 480px);
   object-fit: cover;
   object-position: center;
 }
@@ -426,26 +426,27 @@ p:last-child {
   box-shadow: var(--shadow);
 }
 
-.offering-list {
+.offering-grid {
   list-style: none;
-  margin: 1.6rem 0 1.4rem;
+  margin: 0;
   padding: 0;
-  border-top: 1px solid var(--line);
-}
-
-.section-forest .offering-list {
-  border-top-color: rgba(244, 239, 230, 0.16);
-}
-
-.offering-list li {
   display: grid;
-  gap: 0.45rem;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-.section-forest .offering-list li {
-  border-bottom-color: rgba(244, 239, 230, 0.16);
+.offering-grid li {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  padding: 1.3rem 1.35rem 1.4rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+
+.offering-grid li:last-child {
+  grid-column: 1 / -1;
 }
 
 .offering-name {
@@ -457,10 +458,6 @@ p:last-child {
   font-size: 0.98rem;
   line-height: 1.6;
   color: var(--charcoal-soft);
-}
-
-.section-forest .offering-meta {
-  color: rgba(244, 239, 230, 0.7);
 }
 
 .faq-list {
@@ -814,11 +811,13 @@ p:last-child {
 }
 
 @media (max-width: 900px) {
+  .split,
   .split-reverse,
   .about-grid,
   .contact-grid,
   .creds,
-  .field-row {
+  .field-row,
+  .offering-grid {
     grid-template-columns: 1fr;
   }
 
@@ -828,10 +827,6 @@ p:last-child {
 
   .hero-place {
     display: none;
-  }
-
-  .coaching-photo {
-    position: static;
   }
 
   .hero-copy {
