@@ -1,4 +1,4 @@
-const CALENDLY_URL = "https://calendly.com/savannahschrader65/in-person-running-session";
+const CALENDLY_URL = "https://calendly.com/savannahschrader65/30min";
 
 const header = document.querySelector(".site-header");
 const nav = document.querySelector(".site-nav");
