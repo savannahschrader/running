@@ -97,19 +97,19 @@ p:last-child {
   color: var(--sage);
 }
 
-.about-greeting {
+.about-copy .about-display {
   font-family: var(--serif);
   font-weight: 600;
-  font-size: clamp(2rem, 4.4vw, 3.35rem);
-  line-height: 1.12;
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  line-height: 1.08;
   letter-spacing: -0.02em;
   text-transform: none;
-  color: inherit;
-  margin: 0 0 0.85rem;
+  color: var(--ink);
+  margin: 0 0 0.75rem;
 }
 
-.about-copy h1 {
-  margin-top: 0;
+.about-copy h1.about-display {
+  margin-bottom: 1rem;
 }
 
 .lede {
