@@ -563,6 +563,36 @@ p:last-child {
   color: var(--charcoal-soft);
 }
 
+.price-list {
+  list-style: none;
+  margin: 1.8rem 0 1.4rem;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.price-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem 1.2rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.price-name {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+}
+
+.price-amount {
+  font-size: 1.05rem;
+}
+
+.price-note {
+  color: var(--charcoal-soft);
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1.22fr 0.78fr;
