@@ -391,15 +391,9 @@ p:last-child {
   align-items: start;
 }
 
-.coaching-layout {
-  display: grid;
-  gap: clamp(2.2rem, 4.5vw, 3.4rem);
-}
-
-.coaching-photo img {
-  height: min(58vh, 480px);
-  object-fit: cover;
-  object-position: center;
+.intro h1 {
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
 }
 
 .split-reverse {
@@ -408,6 +402,10 @@ p:last-child {
 
 .copy-measure {
   max-width: 46rem;
+}
+
+#coaching .copy-measure {
+  margin-inline: auto;
 }
 
 .split-reverse .media-frame {
@@ -426,26 +424,44 @@ p:last-child {
   box-shadow: var(--shadow);
 }
 
-.offering-grid {
+.intro .media-frame img {
+  height: min(48vh, 400px);
+}
+
+.offering-list {
   list-style: none;
-  margin: 0;
+  margin: 1.5rem 0 1.25rem;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  column-gap: 2.4rem;
 }
 
-.offering-grid li {
+.offering-list li {
   display: grid;
-  gap: 0.5rem;
+  grid-template-columns: 0.7rem 1fr;
+  column-gap: 0.55rem;
+  row-gap: 0.28rem;
   align-content: start;
-  padding: 1.3rem 1.35rem 1.4rem;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 2px;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--line);
 }
 
-.offering-grid li:last-child {
+.offering-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: 0.62rem;
+  border-radius: 50%;
+  background: var(--forest-mid);
+}
+
+.offering-list .offering-name,
+.offering-list .offering-meta {
+  grid-column: 2;
+}
+
+.offering-list li:last-child {
   grid-column: 1 / -1;
 }
 
@@ -544,7 +560,7 @@ p:last-child {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 0.78fr 1.22fr;
+  grid-template-columns: 1.22fr 0.78fr;
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
 }
@@ -557,7 +573,7 @@ p:last-child {
 .about-portrait::after {
   content: "";
   position: absolute;
-  inset: 1.2rem -1.2rem -1.2rem 1.2rem;
+  inset: 1.2rem 1.2rem -1.2rem -1.2rem;
   border: 1px solid var(--forest-mid);
   z-index: 0;
 }
@@ -568,7 +584,7 @@ p:last-child {
   width: 100%;
   height: min(68vh, 560px);
   object-fit: cover;
-  object-position: center 82%;
+  object-position: 58% 28%;
 }
 
 .creds {
@@ -817,7 +833,7 @@ p:last-child {
   .contact-grid,
   .creds,
   .field-row,
-  .offering-grid {
+  .offering-list {
     grid-template-columns: 1fr;
   }
 
@@ -831,6 +847,10 @@ p:last-child {
 
   .hero-copy {
     margin-bottom: 3.4rem;
+  }
+
+  .about-portrait {
+    order: -1;
   }
 
   .about-portrait::after {
