@@ -97,21 +97,6 @@ p:last-child {
   color: var(--sage);
 }
 
-.about-copy .about-display {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(2.8rem, 7vw, 5.6rem);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  text-transform: none;
-  color: var(--ink);
-  margin: 0 0 0.75rem;
-}
-
-.about-copy h1.about-display {
-  margin-bottom: 1rem;
-}
-
 .lede {
   max-width: 36rem;
   font-size: 1.12rem;
