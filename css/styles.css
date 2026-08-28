@@ -202,7 +202,7 @@ p:last-child {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 1.35rem;
 }
 
 .site-nav a {
@@ -213,7 +213,8 @@ p:last-child {
 }
 
 .site-nav a:hover,
-.site-nav a:focus-visible {
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
   color: var(--forest);
 }
 
@@ -302,6 +303,57 @@ p:last-child {
   margin-top: 1.8rem;
 }
 
+.site-intro {
+  background: var(--forest);
+  color: var(--cream);
+  padding: clamp(3.2rem, 7vw, 5.8rem) 0 3.2rem;
+}
+
+.site-intro .eyebrow {
+  color: var(--cream-deep);
+}
+
+.site-intro h1 {
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 5.6vw, 4.2rem);
+  color: var(--cream);
+}
+
+.intro-lede {
+  max-width: 38rem;
+  margin-bottom: 0;
+  font-size: 1.12rem;
+  font-weight: 300;
+  color: rgba(244, 239, 230, 0.86);
+}
+
+.intro-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.intro-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(244, 239, 230, 0.35);
+  border-radius: 999px;
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.intro-links a:hover,
+.intro-links a:focus-visible {
+  background: rgba(244, 239, 230, 0.1);
+  border-color: var(--cream);
+}
+
 .section {
   padding: clamp(4.5rem, 8vw, 7.5rem) 0;
 }
@@ -322,6 +374,10 @@ p:last-child {
 
 .section-forest .eyebrow {
   color: var(--cream-deep);
+}
+
+.section-sage {
+  background: var(--cream-deep);
 }
 
 .section-charcoal {
@@ -377,8 +433,8 @@ p:last-child {
 
 .offering-list li {
   display: grid;
-  gap: 0.2rem;
-  padding: 1rem 0;
+  gap: 0.45rem;
+  padding: 1.25rem 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -392,12 +448,95 @@ p:last-child {
 }
 
 .offering-meta {
-  font-size: 0.92rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
   color: var(--charcoal-soft);
 }
 
 .section-forest .offering-meta {
   color: rgba(244, 239, 230, 0.7);
+}
+
+.faq-list {
+  margin-top: 1.8rem;
+  border-top: 1px solid var(--line);
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-list summary {
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  padding: 1.15rem 0;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list details p {
+  margin: 0 0 1.2rem;
+  color: var(--charcoal-soft);
+}
+
+.resource-page {
+  min-height: calc(100vh - var(--header-h) - 8rem);
+}
+
+.resource-groups {
+  display: grid;
+  gap: clamp(2.4rem, 5vw, 4rem);
+  margin-top: 2.2rem;
+}
+
+.resource-group h3 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin-bottom: 0.35rem;
+}
+
+.resource-list {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.resource-list:empty::after {
+  display: block;
+  padding: 1.1rem 0;
+  color: var(--charcoal-soft);
+  content: attr(data-empty);
+}
+
+.resource-list li {
+  border-bottom: 1px solid var(--line);
+}
+
+.resource-list a {
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+
+.resource-list a:hover .resource-title,
+.resource-list a:focus-visible .resource-title {
+  color: var(--forest-mid);
+}
+
+.resource-title {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--ink);
+}
+
+.resource-note {
+  font-size: 0.92rem;
+  color: var(--charcoal-soft);
 }
 
 .about-grid {
@@ -409,6 +548,7 @@ p:last-child {
 
 .about-portrait {
   position: relative;
+  margin: 0;
 }
 
 .about-portrait::after {
@@ -425,7 +565,7 @@ p:last-child {
   width: 100%;
   height: min(52vh, 460px);
   object-fit: cover;
-  object-position: center 28%;
+  object-position: center 18%;
 }
 
 .creds {
@@ -611,7 +751,7 @@ p:last-child {
   outline-offset: 3px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .nav-toggle {
     display: block;
     z-index: 60;
@@ -665,8 +805,9 @@ p:last-child {
   .nav-toggle[aria-expanded="true"] span:nth-child(3) {
     transform: translateY(-6.5px) rotate(-45deg);
   }
+}
 
-  .split,
+@media (max-width: 900px) {
   .split-reverse,
   .about-grid,
   .contact-grid,
