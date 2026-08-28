@@ -387,6 +387,21 @@ p:last-child {
   align-items: center;
 }
 
+.split-start {
+  align-items: start;
+}
+
+.coaching-photo {
+  position: sticky;
+  top: calc(var(--header-h) + 1.2rem);
+}
+
+.coaching-photo img {
+  height: min(78vh, 640px);
+  object-fit: cover;
+  object-position: center;
+}
+
 .split-reverse {
   grid-template-columns: 1.08fr 0.92fr;
 }
@@ -815,8 +830,8 @@ p:last-child {
     display: none;
   }
 
-  .hero {
-    height: min(58vh, 26rem);
+  .coaching-photo {
+    position: static;
   }
 
   .hero-copy {
