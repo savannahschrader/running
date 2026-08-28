@@ -246,11 +246,12 @@ p:last-child {
 
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--header-h));
+  min-height: min(78vh, 42rem);
   display: grid;
   align-items: end;
   color: var(--cream);
   overflow: hidden;
+  background: var(--forest);
 }
 
 .hero-media,
@@ -263,13 +264,13 @@ p:last-child {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 32%;
+  object-position: center 18%;
 }
 
 .hero-overlay {
   background:
-    linear-gradient(180deg, rgba(27, 58, 50, 0.18) 0%, rgba(27, 58, 50, 0.55) 48%, rgba(27, 58, 50, 0.88) 100%),
-    linear-gradient(90deg, rgba(36, 36, 33, 0.25), transparent 55%);
+    linear-gradient(180deg, rgba(27, 58, 50, 0.12) 0%, rgba(27, 58, 50, 0.28) 42%, rgba(27, 58, 50, 0.82) 100%),
+    linear-gradient(90deg, rgba(27, 58, 50, 0.28), transparent 58%);
 }
 
 .hero-place {
@@ -289,7 +290,7 @@ p:last-child {
   position: relative;
   z-index: 1;
   width: min(1180px, calc(100% - 2rem));
-  margin: 0 auto 5.5rem;
+  margin: 0 auto 4.2rem;
 }
 
 .hero-copy .eyebrow {
@@ -304,9 +305,9 @@ p:last-child {
 }
 
 .site-intro {
+  padding: 0;
   background: var(--forest);
   color: var(--cream);
-  padding: clamp(3.2rem, 7vw, 5.8rem) 0 3.2rem;
 }
 
 .site-intro .eyebrow {
@@ -822,6 +823,14 @@ p:last-child {
 
   .hero-place {
     display: none;
+  }
+
+  .hero {
+    min-height: min(70vh, 34rem);
+  }
+
+  .hero-media img {
+    object-position: center 28%;
   }
 
   .hero-copy {
