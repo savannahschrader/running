@@ -391,9 +391,22 @@ p:last-child {
   align-items: start;
 }
 
-.intro h1 {
-  max-width: 12ch;
-  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+.coaching-layout {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.82fr) 1.18fr;
+  gap: clamp(1.8rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.coaching-photo {
+  position: sticky;
+  top: calc(var(--header-h) + 1.2rem);
+}
+
+.media-frame.coaching-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .split-reverse {
@@ -402,10 +415,6 @@ p:last-child {
 
 .copy-measure {
   max-width: 46rem;
-}
-
-#coaching .copy-measure {
-  margin-inline: auto;
 }
 
 .split-reverse .media-frame {
@@ -422,10 +431,6 @@ p:last-child {
   object-fit: cover;
   border-radius: 2px;
   box-shadow: var(--shadow);
-}
-
-.intro .media-frame img {
-  height: min(48vh, 400px);
 }
 
 .offering-list {
@@ -833,7 +838,8 @@ p:last-child {
   .contact-grid,
   .creds,
   .field-row,
-  .offering-list {
+  .offering-list,
+  .coaching-layout {
     grid-template-columns: 1fr;
   }
 
@@ -849,6 +855,10 @@ p:last-child {
     margin-bottom: 3.4rem;
   }
 
+  .coaching-photo {
+    position: static;
+  }
+
   .about-portrait {
     order: -1;
   }
@@ -857,7 +867,6 @@ p:last-child {
     display: none;
   }
 
-  .media-frame img,
   .about-portrait img {
     height: 52vw;
     min-height: 240px;
