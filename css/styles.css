@@ -246,18 +246,21 @@ p:last-child {
 }
 
 .hero {
-  position: relative;
-  height: min(78vh, 42rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: min(70vh, 38rem);
   overflow: hidden;
-  background: var(--forest) url("../assets/landscape.png") center 30% / cover no-repeat;
+  background: #c5d2de;
 }
 
 .hero-photo {
   display: block;
-  width: 100%;
+  width: auto;
   height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .hero-place {
@@ -813,11 +816,7 @@ p:last-child {
   }
 
   .hero {
-    height: min(62vh, 28rem);
-  }
-
-  .hero-photo {
-    object-position: center 28%;
+    height: min(58vh, 26rem);
   }
 
   .hero-copy {
