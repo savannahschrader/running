@@ -61,6 +61,7 @@ h1 {
   font-size: clamp(2.8rem, 7vw, 5.6rem);
 }
 
+.section h1,
 h2 {
   font-size: clamp(2rem, 4.4vw, 3.35rem);
 }
@@ -268,9 +269,7 @@ p:last-child {
 }
 
 .hero-overlay {
-  background:
-    linear-gradient(180deg, rgba(27, 58, 50, 0.12) 0%, rgba(27, 58, 50, 0.28) 42%, rgba(27, 58, 50, 0.82) 100%),
-    linear-gradient(90deg, rgba(27, 58, 50, 0.28), transparent 58%);
+  display: none;
 }
 
 .hero-place {
