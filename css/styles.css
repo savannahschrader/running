@@ -322,7 +322,6 @@ p:last-child {
 }
 
 .site-intro {
-  padding: 0;
   background: var(--forest);
   color: var(--cream);
 }
